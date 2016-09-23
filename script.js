@@ -6,6 +6,7 @@ var test;
 var facing = 'down';
 var collisionTable = {};
 var playerCG, collisionCG;
+var walls;
 
 
 preload = function() {
@@ -18,19 +19,18 @@ create = function() {
 
 
   // Physics and Keyboard Input
-  game.physics.startSystem(Phaser.Physics.P2JS);
   cursors = game.input.keyboard.createCursorKeys();
-  game.physics.p2.setImpactEvents(true);
 
   // Create the map and layers
   map = game.add.tilemap('map');
   map.addTilesetImage('tileset');
   var ground = map.createLayer('Ground');
-  var walls = map.createLayer('Walls');
+  walls = map.createLayer('Walls');
+  // walls.debug = true;
+  map.setCollisionBetween(1, 10000, true, walls);
+
   // Player (No animation yet)
   player = game.add.sprite(26.5*16, 29*16, 'ash');
-  game.physics.p2.enable(player);
-  player.body.fixedRotation = true;
   player.animations.add('walk_down', [1,2], 8, true);
   player.animations.add('walk_left', [4,5], 8, true);
   player.animations.add('walk_right', [6,7], 8, true);
@@ -40,50 +40,16 @@ create = function() {
   // Set World Bounds
   game.world.setBounds(0, 0, 64*16, 64*16);
 
-  // Collision Groups
-  playerCG =   game.physics.p2.createCollisionGroup();
-  collisionCG =   game.physics.p2.createCollisionGroup();
-
-
-  // Pokeballs
-  /*var cut_ball = game.add.sprite(632,504,'pokeball');
-  game.physics.p2.enable(cut_ball);
-  cut_ball.body.static = true;
-  cut_ball.body.setCollisionGroup(cut_ballCG);
-  cut_ball.body.collides(playerCG);
-
-
-  // Bushes
-  bushes[0] = game.add.sprite(456, 504, 'bush');
-  bushes[1] = game.add.sprite(104, 408, 'bush');
-  bushes[2] = game.add.sprite(312, 8, 'bush');
-
-  for (i = 0; i < bushes.length; i++) {
-    game.physics.p2.enable(bushes[i]);
-    bushes[i].body.static = true;
-    bushes[i].body.setCollisionGroup(bushCG);
-    bushes[i].body.collides(playerCG);
-  }
-
-*/
   // Player Collisions
-  player.body.setCollisionGroup(playerCG);
+  game.physics.enable(player);
 
-  collisionBetween(player, "Walls");
-
-  //player.body.collides(collisionCG,collide,this);
   player.body.collideWorldBounds=true;
 
   game.camera.follow(player);
-
-  //player.body.collides(grassCG,onGrass,this);
-
-  //map.setCollisionBetween(1,8);
-  //map.setTileIndexCallback(8, onGrass, this, grass);
-
 };
 
 update = function() {
+  game.physics.arcade.collide(player, walls);
   player.body.velocity.x = 0;
   player.body.velocity.y = 0;
   if (cursors.left.isDown) {
@@ -117,25 +83,6 @@ update = function() {
 
 
 };
-
-
-// This function causes collisions between the player sprite and a certain layer.
-collisionBetween = function(player, layer) {
-  collisionTable[layer] = game.physics.p2.createCollisionGroup();
-  var layerObjects = game.physics.p2.convertTilemap(map, layer);
-    for (i = 0; i < layerObjects.length; i++) {
-        var layerBody = layerObjects[i];
-        layerBody.setCollisionGroup(collisionTable[layer]);
-        layerBody.collides(playerCG);
-    }
-  player.body.collides(collisionTable[layer]);
-};
-
-
-// This function will cause random battles to occur when on the grass
-
-
-// This function gives the player the ability to cut the bushes when he collects the pokeball
 
 
 render = function() {
