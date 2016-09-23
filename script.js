@@ -6,7 +6,7 @@ var test;
 var facing = 'down';
 var collisionTable = {};
 var playerCG, collisionCG;
-var walls;
+var walls, entries;
 
 
 preload = function() {
@@ -26,8 +26,10 @@ create = function() {
   map.addTilesetImage('tileset');
   var ground = map.createLayer('Ground');
   walls = map.createLayer('Walls');
+  entries = map.createLayer('Entries');
   // walls.debug = true;
   map.setCollisionBetween(1, 10000, true, walls);
+  map.setCollisionBetween(1, 10000, true, entries);
 
   // Player (No animation yet)
   player = game.add.sprite(26.5*16, 29*16, 'ash');
@@ -49,6 +51,9 @@ create = function() {
 };
 
 update = function() {
+  game.physics.arcade.collide(player, entries, function () {
+    console.log('entered a building')
+  });
   game.physics.arcade.collide(player, walls);
   player.body.velocity.x = 0;
   player.body.velocity.y = 0;
