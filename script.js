@@ -9,11 +9,11 @@ var playerCG, collisionCG;
 
 
 preload = function() {
-
     game.load.tilemap('map', "maptown.json", null, Phaser.Tilemap.TILED_JSON);
-    game.load.image('basic_tileset', 'tileset-wesley.png');
-    game.load.spritesheet('ash', '//i.imgur.com/StoAwnU.gif', 15.16, 16);
+    game.load.image('tileset', 'assets/tileset-wesley.png');
+    game.load.spritesheet('ash', 'assets/ash.gif', 15.16, 16);
 };
+
 create = function() {
 
 
@@ -24,12 +24,9 @@ create = function() {
 
   // Create the map and layers
   map = game.add.tilemap('map');
-  map.addTilesetImage('basic_tileset');
-  var base = map.createLayer('Base');
-  var walkable = map.createLayer('Walkable');
-  var collision = map.createLayer('Collision');
-  var above = map.createLayer('Above');
-  var grass = map.createLayer('Grass');
+  map.addTilesetImage('tileset');
+  var ground = map.createLayer('Ground');
+  var walls = map.createLayer('Walls');
   // Player (No animation yet)
   player = game.add.sprite(576, 608, 'ash');
   game.physics.p2.enable(player);
@@ -72,7 +69,7 @@ create = function() {
   // Player Collisions
   player.body.setCollisionGroup(playerCG);
 
-  collisionBetween(player, "Collision");
+  collisionBetween(player, "Walls");
 
   //player.body.collides(collisionCG,collide,this);
   player.body.collideWorldBounds=true;
