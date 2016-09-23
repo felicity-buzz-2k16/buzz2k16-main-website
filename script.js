@@ -28,7 +28,7 @@ create = function() {
   var ground = map.createLayer('Ground');
   var walls = map.createLayer('Walls');
   // Player (No animation yet)
-  player = game.add.sprite(576, 608, 'ash');
+  player = game.add.sprite(26.5*16, 29*16, 'ash');
   game.physics.p2.enable(player);
   player.body.fixedRotation = true;
   player.animations.add('walk_down', [1,2], 8, true);
@@ -38,7 +38,7 @@ create = function() {
   player.frame = 0;
 
   // Set World Bounds
-  game.world.setBounds(0,0,640,640);
+  game.world.setBounds(0, 0, 64*16, 64*16);
 
   // Collision Groups
   playerCG =   game.physics.p2.createCollisionGroup();
