@@ -8,6 +8,13 @@ var collisionTable = {};
 var playerCG, collisionCG;
 var walls, entries;
 
+var modals = {
+  "26,27": "schedule",
+  "6,10": "events",
+  "43,34": "about",
+  "42,10": "game1",
+  "59,20": "game2",
+}
 
 preload = function() {
     game.load.tilemap('map', "maptown.json", null, Phaser.Tilemap.TILED_JSON);
@@ -51,8 +58,14 @@ create = function() {
 };
 
 update = function() {
-  game.physics.arcade.collide(player, entries, function () {
-    console.log('entered a building')
+  game.physics.arcade.collide(player, entries, function (pl, entry) {
+    if (location.hash == '#openModal') return
+    document.getElementById('modalContent').innerHTML = 'entered a building ' +
+                                                         entry.x + ' , ' +
+                                                         entry.y + ' , ' +
+                                                         modals[entry.x + ',' + entry.y];
+    location.hash = '#openModal'
+    game.paused = true
   });
   game.physics.arcade.collide(player, walls);
   player.body.velocity.x = 0;
