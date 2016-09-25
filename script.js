@@ -93,7 +93,7 @@ update = function() {
 render = function() {
 };
 
-game = new Phaser.Game(320, 320, Phaser.CANVAS, 'phaser-game', {
+game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS, 'phaser-game', {
   preload: preload,
   create: create,
   update: update,
