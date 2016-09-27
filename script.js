@@ -97,7 +97,7 @@ update = function() {
   game.physics.arcade.collide(player, sprites, function (pl, character) {
     if (isModalOpen) return
     isModalOpen = true
-    picoModal(`<img src="./assets/images/${character.properties.name}.jpg"><p>"${character.properties.dialogue}"</p>`)
+    picoModal(`<img src="./assets/images/${character.properties.name}.jpg" width="${window.innerWidth*0.5}"><p align="center">"${character.properties.dialogue}"</p>`)
         .afterClose(modalClosed)
         .show();
     game.paused = true
