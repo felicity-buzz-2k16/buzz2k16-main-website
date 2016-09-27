@@ -33,6 +33,7 @@ preload = function() {
     game.load.image('johnny', 'assets/johnny.png')
     game.load.image('spiderman', 'assets/spiderman.png')
     game.load.image('naruto', 'assets/naruto.png')
+    game.load.image('dragon', 'assets/dragon.png')
     game.load.spritesheet('ash', 'assets/ash.gif', 15.16, 16);
 };
 
@@ -51,6 +52,7 @@ create = function() {
   map.addTilesetImage('johnny');
   map.addTilesetImage('spiderman');
   map.addTilesetImage('naruto');
+  map.addTilesetImage('dragon');
   var ground = map.createLayer('Ground');
   walls = map.createLayer('Walls');
   entries = map.createLayer('Entries');
