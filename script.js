@@ -7,6 +7,14 @@ var facing = 'down';
 var collisionTable = {};
 var playerCG, collisionCG;
 var walls, entries, sprites;
+var isModalOpen = false;
+
+function modalClosed () {
+  game.paused = false;
+  setTimeout(function () { // To ignore certain extra triggered collisions
+    isModalOpen = false
+  }, 100)
+}
 
 var modals = {
   "26,27": "schedule",
@@ -71,19 +79,19 @@ create = function() {
 
 update = function() {
   game.physics.arcade.collide(player, entries, function (pl, entry) {
-    if (location.hash == '#openModal') return
-    document.getElementById('modalContent').innerHTML = 'entered a building ' +
-                                                         entry.x + ' , ' +
-                                                         entry.y + ' , ' +
-                                                         modals[entry.x + ',' + entry.y];
-    location.hash = '#openModal'
+    if (isModalOpen) return
+    isModalOpen = true
+    picoModal('entered a building ' + entry.x + ' , ' + entry.y + ' , ' + modals[entry.x + ',' + entry.y])
+        .afterClose(modalClosed)
+        .show();
     game.paused = true
   });
   game.physics.arcade.collide(player, sprites, function (pl, character) {
-    if (location.hash == '#openModal') return
-    document.getElementById('modalContent').innerHTML = character.properties.name + ' says ' +
-                                                        character.properties.dialogue;
-    location.hash = '#openModal'
+    if (isModalOpen) return
+    isModalOpen = true
+    picoModal(character.properties.name + ' says ' + character.properties.dialogue)
+        .afterClose(modalClosed)
+        .show();
     game.paused = true
   })
   game.physics.arcade.collide(player, walls);
