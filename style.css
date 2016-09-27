@@ -3,3 +3,14 @@
   margin: 0;
   padding: 0;
 }
+
+.dialogue-img {
+  max-height: 50%;
+  max-width: 50%;
+}
+
+.dialogue-text {
+  color: #222;
+  font-size: 1.25em;
+  font-family: fantasy;
+}
