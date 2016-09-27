@@ -8,6 +8,7 @@ var collisionTable = {};
 var playerCG, collisionCG;
 var walls, entries, sprites;
 var isModalOpen = false;
+var VELOCITY = 150;
 
 function modalClosed () {
   game.paused = false;
@@ -115,19 +116,19 @@ update = function() {
   }
   if (cursors.left.isDown || game.input.keyboard.isDown(Phaser.Keyboard.A)) {
     player.animations.play('walk_left');
-    player.body.velocity.x = -100;
+    player.body.velocity.x = -VELOCITY;
     facing = 'left';
   } else if (cursors.right.isDown || game.input.keyboard.isDown(Phaser.Keyboard.D)) {
     player.animations.play('walk_right');
-    player.body.velocity.x = 100;
+    player.body.velocity.x = VELOCITY;
     facing = 'right';
   } else if (cursors.up.isDown || game.input.keyboard.isDown(Phaser.Keyboard.W)) {
     player.animations.play('walk_up');
-    player.body.velocity.y = -100;
+    player.body.velocity.y = -VELOCITY*1.5;
     facing = 'up';
   } else if (cursors.down.isDown || game.input.keyboard.isDown(Phaser.Keyboard.S)) {
     player.animations.play('walk_down');
-    player.body.velocity.y = 100;
+    player.body.velocity.y = VELOCITY*1.5;
     facing = 'down';
   } else {
     player.animations.stop();
