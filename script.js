@@ -28,6 +28,8 @@ preload = function() {
     game.load.tilemap('map', "maptown.json", null, Phaser.Tilemap.TILED_JSON);
     game.load.image('tileset', 'assets/tileset-wesley.png');
     game.load.image('ben10', 'assets/ben10.png');
+    game.load.image('gandalf', 'assets/gandalf.png')
+    game.load.image('batman', 'assets/batman.png')
     game.load.spritesheet('ash', 'assets/ash.gif', 15.16, 16);
 };
 
@@ -41,6 +43,8 @@ create = function() {
   map = game.add.tilemap('map');
   map.addTilesetImage('tileset');
   map.addTilesetImage('ben10');
+  map.addTilesetImage('gandalf');
+  map.addTilesetImage('batman');
   var ground = map.createLayer('Ground');
   walls = map.createLayer('Walls');
   entries = map.createLayer('Entries');
