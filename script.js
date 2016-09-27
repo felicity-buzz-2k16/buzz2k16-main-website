@@ -23,6 +23,7 @@ preload = function() {
     game.load.image('gandalf', 'assets/gandalf.png')
     game.load.image('batman', 'assets/batman.png')
     game.load.image('johnny', 'assets/johnny.png')
+    game.load.image('spiderman', 'assets/spiderman.png')
     game.load.spritesheet('ash', 'assets/ash.gif', 15.16, 16);
 };
 
@@ -39,6 +40,7 @@ create = function() {
   map.addTilesetImage('gandalf');
   map.addTilesetImage('batman');
   map.addTilesetImage('johnny');
+  map.addTilesetImage('spiderman');
   var ground = map.createLayer('Ground');
   walls = map.createLayer('Walls');
   entries = map.createLayer('Entries');
