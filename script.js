@@ -110,6 +110,9 @@ update = function() {
   game.physics.arcade.collide(player, walls);
   player.body.velocity.x = 0;
   player.body.velocity.y = 0;
+  if (game.input.keyboard.event) {
+    hideHint ();
+  }
   if (cursors.left.isDown || game.input.keyboard.isDown(Phaser.Keyboard.A)) {
     player.animations.play('walk_left');
     player.body.velocity.x = -100;
@@ -152,3 +155,9 @@ game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS, 'ph
   update: update,
   render: render
 });
+
+function hideHint() {
+  document.getElementById('hint-dialogue').style.display = 'none'
+}
+
+window.setTimeout(hideHint, 5000)
