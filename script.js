@@ -6,7 +6,7 @@ var test;
 var facing = 'down';
 var collisionTable = {};
 var playerCG, collisionCG;
-var walls, entries;
+var walls, entries, sprites;
 
 var modals = {
   "26,27": "schedule",
@@ -19,6 +19,7 @@ var modals = {
 preload = function() {
     game.load.tilemap('map', "maptown.json", null, Phaser.Tilemap.TILED_JSON);
     game.load.image('tileset', 'assets/tileset-wesley.png');
+    game.load.image('ben10', 'assets/ben10.png');
     game.load.spritesheet('ash', 'assets/ash.gif', 15.16, 16);
 };
 
@@ -31,12 +32,15 @@ create = function() {
   // Create the map and layers
   map = game.add.tilemap('map');
   map.addTilesetImage('tileset');
+  map.addTilesetImage('ben10');
   var ground = map.createLayer('Ground');
   walls = map.createLayer('Walls');
   entries = map.createLayer('Entries');
+  sprites = map.createLayer('Sprites');
   // walls.debug = true;
   map.setCollisionBetween(1, 10000, true, walls);
   map.setCollisionBetween(1, 10000, true, entries);
+  map.setCollisionBetween(1, 10000, true, sprites);
 
   // Player (No animation yet)
   player = game.add.sprite(26.5*16, 29*16, 'ash');
@@ -67,6 +71,13 @@ update = function() {
     location.hash = '#openModal'
     game.paused = true
   });
+  game.physics.arcade.collide(player, sprites, function (pl, character) {
+    if (location.hash == '#openModal') return
+    document.getElementById('modalContent').innerHTML = character.properties.name + ' says ' +
+                                                        character.properties.dialogue;
+    location.hash = '#openModal'
+    game.paused = true
+  })
   game.physics.arcade.collide(player, walls);
   player.body.velocity.x = 0;
   player.body.velocity.y = 0;
