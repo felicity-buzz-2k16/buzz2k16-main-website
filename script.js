@@ -105,19 +105,19 @@ update = function() {
   game.physics.arcade.collide(player, walls);
   player.body.velocity.x = 0;
   player.body.velocity.y = 0;
-  if (cursors.left.isDown) {
+  if (cursors.left.isDown || game.input.keyboard.isDown(Phaser.Keyboard.A)) {
     player.animations.play('walk_left');
     player.body.velocity.x = -100;
     facing = 'left';
-  } else if (cursors.right.isDown) {
+  } else if (cursors.right.isDown || game.input.keyboard.isDown(Phaser.Keyboard.D)) {
     player.animations.play('walk_right');
     player.body.velocity.x = 100;
     facing = 'right';
-  } else if (cursors.up.isDown) {
+  } else if (cursors.up.isDown || game.input.keyboard.isDown(Phaser.Keyboard.W)) {
     player.animations.play('walk_up');
     player.body.velocity.y = -100;
     facing = 'up';
-  } else if (cursors.down.isDown) {
+  } else if (cursors.down.isDown || game.input.keyboard.isDown(Phaser.Keyboard.S)) {
     player.animations.play('walk_down');
     player.body.velocity.y = 100;
     facing = 'down';
