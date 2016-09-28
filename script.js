@@ -98,10 +98,12 @@ update = function() {
     var info = modals[entry.x + ',' + entry.y]
     var desc;
     if (!info.href) desc = 'Work In Progress!';
-    else {
-      window.open(info.href)
-      return
-    }
+    else desc = `<div style="width:${window.innerWidth*.80}px; height: ${window.innerHeight*.80}px">
+    <div id="modal-iframe-container">
+      <iframe src="${info.href}" id="modal-iframe">
+      </iframe>
+      </div>
+    </div>`
     picoModal(desc)
         .afterClose(modalClosed)
         .show();

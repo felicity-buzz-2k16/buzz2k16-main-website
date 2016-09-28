@@ -33,3 +33,21 @@
 canvas {
   margin: auto;
 }
+
+#modal-iframe-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#modal-iframe {
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 120%;
+  height: 120%;
+  transform-origin: 0 0;
+  transform: scale(0.8);
+}
