@@ -100,3 +100,9 @@ th {
     background-color: #86b300;
     color: white;
 }
+
+@media only screen and (max-width: 920px) {
+  .cal {
+    display: none;
+  }
+}
