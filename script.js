@@ -37,6 +37,7 @@ preload = function() {
     game.load.image('dragon', 'assets/dragon.png')
     game.load.image('flash', 'assets/flash.png')
     game.load.image('bunny', 'assets/bunny.png')
+    game.load.image('buzz_new_small_new', 'assets/buzz_new_small_new.png')
     game.load.spritesheet('ash', 'assets/ash.gif', 15.16, 16);
 };
 
@@ -58,8 +59,10 @@ create = function() {
   map.addTilesetImage('dragon');
   map.addTilesetImage('bunny');
   map.addTilesetImage('flash');
+  map.addTilesetImage('buzz_new_small_new');
   var ground = map.createLayer('Ground');
   walls = map.createLayer('Walls');
+  var objects = map.createLayer('Objects');
   entries = map.createLayer('Entries');
   sprites = map.createLayer('Sprites');
   // walls.debug = true;
