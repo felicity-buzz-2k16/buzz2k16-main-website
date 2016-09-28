@@ -52,8 +52,8 @@ var getDateDiv = function (date) {
 }
 
 var getDateEvent = function (event) {
-  return "<li class='event'><a href=" + event.href + "><div class=''>" + event.name +
-    "</div><div class=''>" + event.time + "</div></a></li><br>";
+  return "<li class='event'><a href=" + event.href + "><div class='eventname'><div>" + event.name +
+    "</div><div>" + event.time + "</div></div></a></li><br>";
 }
 
 var getDateList = function (date, event_list) {
