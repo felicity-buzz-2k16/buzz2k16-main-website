@@ -18,7 +18,7 @@ function modalClosed () {
 }
 
 var modals = {
-  "26,27": "schedule",
+  "26,27": {name: "schedule", href: 'schedule/schedule.html'},
   "6,10": "events",
   "43,34": "about",
   "42,10": "game1",
@@ -90,7 +90,13 @@ update = function() {
   game.physics.arcade.collide(player, entries, function (pl, entry) {
     if (isModalOpen) return
     isModalOpen = true
-    picoModal('entered a building ' + entry.x + ' , ' + entry.y + ' , ' + modals[entry.x + ',' + entry.y])
+    var info = modals[entry.x + ',' + entry.y]
+    var desc;
+    if (!info.href) desc = 'Work In Progress!';
+    else desc = `
+      <iframe src="${info.href}" width="${window.innerWidth * 0.75}" height="${window.innerHeight * 0.75}">
+      </iframe>`
+    picoModal(desc)
         .afterClose(modalClosed)
         .show();
     game.paused = true
