@@ -161,7 +161,7 @@ update = function() {
 render = function() {
 };
 
-game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.CANVAS, 'phaser-game', {
+game = new Phaser.Game(Math.min(window.innerWidth,64*16), Math.min(window.innerHeight,64*16), Phaser.CANVAS, 'phaser-game', {
   preload: preload,
   create: create,
   update: update,
