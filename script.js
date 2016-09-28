@@ -125,32 +125,63 @@ update = function() {
   if (game.input.keyboard.event) {
     hideHint ();
   }
-  if (cursors.left.isDown || game.input.keyboard.isDown(Phaser.Keyboard.A)) {
-    player.animations.play('walk_left');
-    player.body.velocity.x = -VELOCITY;
-    facing = 'left';
-  } else if (cursors.right.isDown || game.input.keyboard.isDown(Phaser.Keyboard.D)) {
-    player.animations.play('walk_right');
-    player.body.velocity.x = VELOCITY;
-    facing = 'right';
-  } else if (cursors.up.isDown || game.input.keyboard.isDown(Phaser.Keyboard.W)) {
-    player.animations.play('walk_up');
-    player.body.velocity.y = -VELOCITY*1.5;
-    facing = 'up';
-  } else if (cursors.down.isDown || game.input.keyboard.isDown(Phaser.Keyboard.S)) {
-    player.animations.play('walk_down');
-    player.body.velocity.y = VELOCITY*1.5;
-    facing = 'down';
+  if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
+    if (cursors.left.isDown || game.input.keyboard.isDown(Phaser.Keyboard.A)) {
+      player.animations.play('walk_left');
+      player.body.velocity.x = -VELOCITY * 2;
+      facing = 'left';
+    } else if (cursors.right.isDown || game.input.keyboard.isDown(Phaser.Keyboard.D)) {
+      player.animations.play('walk_right');
+      player.body.velocity.x = VELOCITY * 2;
+      facing = 'right';
+    } else if (cursors.up.isDown || game.input.keyboard.isDown(Phaser.Keyboard.W)) {
+      player.animations.play('walk_up');
+      player.body.velocity.y = -VELOCITY*1.5 * 2;
+      facing = 'up';
+    } else if (cursors.down.isDown || game.input.keyboard.isDown(Phaser.Keyboard.S)) {
+      player.animations.play('walk_down');
+      player.body.velocity.y = VELOCITY*1.5 * 2;
+      facing = 'down';
+    } else {
+      player.animations.stop();
+      if (facing == 'left') {
+        player.frame = 3;
+      } else if (facing == 'right') {
+        player.frame = 8;
+      } else if (facing == 'up') {
+        player.frame = 9;
+      } else if (facing == 'down') {
+        player.frame = 0;
+      }
+    }
   } else {
-    player.animations.stop();
-    if (facing == 'left') {
-      player.frame = 3;
-    } else if (facing == 'right') {
-      player.frame = 8;
-    } else if (facing == 'up') {
-      player.frame = 9;
-    } else if (facing == 'down') {
-      player.frame = 0;
+    if (cursors.left.isDown || game.input.keyboard.isDown(Phaser.Keyboard.A)) {
+      player.animations.play('walk_left');
+      player.body.velocity.x = -VELOCITY;
+      facing = 'left';
+    } else if (cursors.right.isDown || game.input.keyboard.isDown(Phaser.Keyboard.D)) {
+      player.animations.play('walk_right');
+      player.body.velocity.x = VELOCITY;
+      facing = 'right';
+    } else if (cursors.up.isDown || game.input.keyboard.isDown(Phaser.Keyboard.W)) {
+      player.animations.play('walk_up');
+      player.body.velocity.y = -VELOCITY*1.5;
+      facing = 'up';
+    } else if (cursors.down.isDown || game.input.keyboard.isDown(Phaser.Keyboard.S)) {
+      player.animations.play('walk_down');
+      player.body.velocity.y = VELOCITY*1.5;
+      facing = 'down';
+    } else {
+      player.animations.stop();
+      if (facing == 'left') {
+        player.frame = 3;
+      } else if (facing == 'right') {
+        player.frame = 8;
+      } else if (facing == 'up') {
+        player.frame = 9;
+      } else if (facing == 'down') {
+        player.frame = 0;
+      }
     }
   }
 
