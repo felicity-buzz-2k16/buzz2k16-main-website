@@ -207,3 +207,11 @@ function hideHint() {
 }
 
 window.setTimeout(hideHint, 5000)
+
+function toggleMusic() {
+  var music = document.getElementById('music');
+  var mute = document.getElementById('mute')
+  var unmute = document.getElementById('unmute')
+  if (music.paused) { music.play(); mute.style.display = 'none'; unmute.style.display = 'block'; }
+  else { music.pause(); unmute.style.display = 'none'; mute.style.display = 'block'; }
+}

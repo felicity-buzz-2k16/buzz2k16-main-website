@@ -51,3 +51,13 @@ canvas {
   transform-origin: 0 0;
   transform: scale(0.8);
 }
+
+.mute-button {
+  padding: 0.5em;
+  border-radius: 0.25em;
+  background-color: rgba(255,255,255,0.75);
+  position: absolute;
+  z-index: 2;
+  bottom: 1em;
+  right: 1em;
+}
