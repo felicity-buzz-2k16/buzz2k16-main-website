@@ -2,7 +2,7 @@ var scheduleJSON = [
   {
     date: '29 September',
     events: [
-      {name: 'Cache In', time: '08:00 AM', href: 'cachein'},
+      {name: 'Cache In', time: '08:00 AM', href: '/cachein'},
       {name: 'Hack In', time: '09:00 PM', href: 'hackin'},
     ]
   },
