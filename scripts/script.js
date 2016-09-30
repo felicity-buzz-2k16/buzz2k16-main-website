@@ -97,7 +97,14 @@ update = function() {
     isModalOpen = true
     var info = modals[entry.x + ',' + entry.y]
     var desc;
-    if (!info.href) desc = 'Work In Progress!';
+    if (info == 'about') desc = `<h2>About</h2><br/>
+    <p>This site was developed by Megh Parikh, Anubhab Sen,
+    Pranav Nair, Sourabh Rajguru, Harshit Mahajan, Nagendra Varma and Arun Garimella.</p><br/>
+    <p>Megh Parikh, Anubhab Sen and Sourabh Rajguru contributed to the quiz portal frontend. </p><br/>
+    <p>The quiz portal backend has been developed by Megh Parikh, kartikey Pant, Anubhab Sen, Pranav Bhasin and Yash Goyal. </p><br/>
+    <p>The HackIn portal is being managed by Nikhil Rayaprolu. </p><br/>
+    <p>The site is being administered by Megh Parikh.</p>`
+    else if (!info.href) desc = 'Work In Progress!';
     else if (info.name === 'schedule') {
       desc = `<div style="width:${window.innerWidth*.80}px; height: ${window.innerHeight*.80}px">
       <div id="modal-iframe-container">
