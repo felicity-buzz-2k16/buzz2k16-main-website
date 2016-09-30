@@ -13,7 +13,6 @@ var scheduleJSON = [
       {name: 'Rubik\'s Cube', time: '05:30 PM', href: 'rubikscube'},
       {name: 'Zombie Zone', time: '07:00 PM', href: 'gaming'},
       {name: 'Na Show Na Estam', time: '08:00 PM', href: 'misc'},
-      {name: 'Lit Quiz', time: '08:00 PM', href: 'lit'},
     ]
   },
   {
@@ -21,6 +20,7 @@ var scheduleJSON = [
     events: [
       {name: 'Hack In', time: '12:00 AM', href: 'hackin'},
       {name: 'Gordian Knot', time: '10:00 AM', href: 'gordianknot'},
+      {name: 'Lit Quiz', time: '02:00 PM', href: 'lit'},
       {name: 'Poster Making', time: '03:30 PM', href: 'kalakshetra'},
       {name: 'Pokemon Showdown!', time: '03:30 PM', href: 'gaming'},
       {name: 'Sports(Footsal, 21 Points, Gully Cricket)', time: '05:00 PM', href: 'sports'},
