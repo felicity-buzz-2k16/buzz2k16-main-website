@@ -19,10 +19,10 @@ function modalClosed () {
 
 var modals = {
   "26,27": {name: "schedule", href: 'schedule/schedule.html'},
-  "6,10": "events",
+  "6,10": {name: "lit", href: 'modals/lit.html'},
   "43,34": "about",
-  "42,10": "game1",
-  "59,20": "game2",
+  "42,10": {name: "threads", href: 'modals/threads.html'},
+  "59,20": {name: "zombie", href: 'modals/zombie.html'},
 }
 
 preload = function() {
@@ -98,7 +98,15 @@ update = function() {
     var info = modals[entry.x + ',' + entry.y]
     var desc;
     if (!info.href) desc = 'Work In Progress!';
-    else desc = `<div style="width:${window.innerWidth*.80}px; height: ${window.innerHeight*.80}px">
+    else if (info.name === 'schedule') {
+      desc = `<div style="width:${window.innerWidth*.80}px; height: ${window.innerHeight*.80}px">
+      <div id="modal-iframe-container">
+        <iframe src="${info.href}" id="modal-iframe">
+        </iframe>
+        </div>
+      </div>`
+    }
+    else desc = `<div style="width:${window.innerWidth*.40}px; height: ${window.innerHeight*.40}px">
     <div id="modal-iframe-container">
       <iframe src="${info.href}" id="modal-iframe">
       </iframe>

@@ -106,3 +106,13 @@ th {
     display: none;
   }
 }
+
+.has-event {
+  background-color: #ff9900;
+  color: #ffffff;
+}
+
+.today {
+  background-color: #66ccff;
+  color: #000000;
+}
