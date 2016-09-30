@@ -4,13 +4,14 @@ var getDateDiv = function (date) {
 
 var pageroot = 'https://felicity.iiit.ac.in/buzz/'
 var getDateEvent = function (event) {
-	return `<a href="${pageroot + event.href}"><article class=\"card\">
+  var atag = event.href ? `<a href="${pageroot + event.href}">`: "";
+	return `${atag}<article class=\"card\">
 			<header>
 				<button>${event.name}</button>
 				<button class="dangerous">${event.time}</button>
 			</header>
 		</article>
-		</a>`
+		${event.href ? '</a>': ''}`
 }
 
 var getDateList = function (date, event_list) {

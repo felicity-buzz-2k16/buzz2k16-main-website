@@ -10,6 +10,7 @@
 }
 
 .event{
+    color: white;
     opacity: 0.8;
     border-radius: 15px 50px;
     border: 5px solid black;
