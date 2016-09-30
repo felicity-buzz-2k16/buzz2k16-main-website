@@ -54,7 +54,7 @@ var getDateDiv = function (date) {
 }
 var pageroot = 'https://felicity.iiit.ac.in/buzz/'
 var getDateEvent = function (event) {
-  return "<li class='event'><a href=" + pageroot + event.href + "><div class='eventname'><div>" + event.name +
+  return "<li class='event'><a href=" + pageroot + event.href + " target='_blank'><div class='eventname'><div>" + event.name +
     "</div><div>" + event.time + "</div></div></a></li><br>";
 }
 
