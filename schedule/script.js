@@ -12,24 +12,24 @@ var scheduleJSON = [
     events: [
       {name: 'Sports(Futsal, 21 Points, Gully Cricket)', time: '05:00 PM', href: 'sports'},
       {name: 'Rubik\'s Cube', time: '05:30 PM', href: 'rubikscube'},
-      {name: 'Rangoli Making', time: '06:00 PM', href: 'kalakshetra'},
-      {name: 'Na Show Na Estam', time: '08:00 PM', href: 'misc'},
       {name: 'Zombie Zone', time: '07:00 PM', href: 'gaming'},
+      {name: 'Na Show Na Estam', time: '08:00 PM', href: 'misc'},
       {name: 'Lit Quiz', time: '08:00 PM', href: 'lit'},
-      {name: 'Gordian Knot', time: '10:00 PM', href: 'gordianknot'},
     ]
   },
   {
     date: '1 October',
     events: [
+      {name: 'Gordian Knot', time: '10:00 AM', href: 'gordianknot'},
       {name: 'Poster Making', time: '03:30 PM', href: 'kalakshetra'},
       {name: 'Pokemon Showdown!', time: '03:30 PM', href: 'gaming'},
       {name: 'Sports(Footsal, 21 Points, Gully Cricket)', time: '05:00 PM', href: 'sports'},
+      {name: 'Rangoli Making', time: '05:00 PM', href: 'kalakshetra'},
       {name: 'JAM/ Air Crash', time: '06:00 PM', href: 'jam'},
       {name: 'Design It', time: '06:00 PM', href: 'designit'},
-      {name: 'CodeCraft', time: '08:30 PM', href: 'codecraft'},
       {name: 'Zombie Zone', time: '07:00 PM', href: 'gaming'},
       {name: 'Hackathon', time: '07:00', href: 'hackathon'},
+      {name: 'CodeCraft', time: '10:00 PM', href: 'codecraft'},
     ]
   },
   {
@@ -37,12 +37,13 @@ var scheduleJSON = [
     events: [
       {name: 'Hackathon', time: '00:00', href: 'hackathon'},
       {name: 'Sports(Footsal, 21 Points, Gully Cricket)', time: '08:00 AM', href: 'sports'},
-      {name: 'Arduino', time: '09:00 PM', href: 'arduino'},
+      {name: 'Zombie Zone Finals', time: '09:00 AM', href: 'gaming'},
+      {name: 'Arduino', time: '09:00 AM - 12:00 Noon', href: 'arduino'},
+      {name: 'Friends + Anime Quiz - Miscellaneous', time: '09:30 AM - 11:30 AM', href: 'faquiz'},
       {name: 'Face Painting', time: '10:30 AM', href: 'kalakshetra'},
       {name: 'Spin the Yarn', time: '12:00 PM', href: 'lit'},
       {name: 'Telugu antakshri', time: '03:00 PM', href: 'antakshri'},
       {name: 'Hindi antakshri', time: '03:00 PM', href: 'antakshri'},
-      {name: 'Zombie Zone Finals', time: '09:00 AM', href: 'gaming'},
       {name: 'Treasure Hunt', time: '05:00 PM', href: 'lit'},
       {name: 'Music and Dance night', time: '07:30 PM', href: 'lolz'}
     ]
