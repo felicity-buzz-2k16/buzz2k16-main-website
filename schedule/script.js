@@ -2,8 +2,7 @@ var scheduleJSON = [
   {
     date: '29 September',
     events: [
-      {name: 'Cache In', time: '08:00 AM', href: '/cachein'},
-      {name: 'Hack In', time: '09:00 PM', href: 'hackin'},
+      {name: 'Cache In', time: '08:00 AM', href: 'cachein'},
     ]
   },
 
@@ -20,6 +19,7 @@ var scheduleJSON = [
   {
     date: '1 October',
     events: [
+      {name: 'Hack In', time: '12:00 AM', href: 'hackin'},
       {name: 'Gordian Knot', time: '10:00 AM', href: 'gordianknot'},
       {name: 'Poster Making', time: '03:30 PM', href: 'kalakshetra'},
       {name: 'Pokemon Showdown!', time: '03:30 PM', href: 'gaming'},
@@ -29,6 +29,7 @@ var scheduleJSON = [
       {name: 'Design It', time: '06:00 PM', href: 'designit'},
       {name: 'Zombie Zone', time: '07:00 PM', href: 'gaming'},
       {name: 'Hackathon', time: '07:00', href: 'hackathon'},
+      {name: 'Mini Militia', time: '09:00 PM', href: 'minimilitia'},
       {name: 'CodeCraft', time: '10:00 PM', href: 'codecraft'},
     ]
   },
