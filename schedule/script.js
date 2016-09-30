@@ -10,13 +10,13 @@ var scheduleJSON = [
   {
     date: '30 September',
     events: [
-      {name: 'Gordian Knot', time: '08:00 AM', href: 'gordianknot'},
       {name: 'Sports(Futsal, 21 Points, Gully Cricket)', time: '05:00 PM', href: 'sports'},
       {name: 'Rubik\'s Cube', time: '05:30 PM', href: 'rubikscube'},
       {name: 'Rangoli Making', time: '06:00 PM', href: 'kalakshetra'},
       {name: 'Na Show Na Estam', time: '08:00 PM', href: 'misc'},
       {name: 'Zombie Zone', time: '07:00 PM', href: 'gaming'},
       {name: 'Lit Quiz', time: '08:00 PM', href: 'lit'},
+      {name: 'Gordian Knot', time: '10:00 PM', href: 'gordianknot'},
     ]
   },
   {
