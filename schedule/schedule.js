@@ -20,7 +20,7 @@ window.scheduleJSON = [
     events: [
       {name: 'Hack In', time: '12:00 AM', href: 'hackin'},
       {name: 'Gordian Knot', time: '10:00 AM', href: 'gordianknot'},
-      {name: 'Lit Quiz', time: '02:00 PM', href: 'lit'},
+      {name: 'Lit Quiz', time: '02:00 PM', href: 'litquiz'},
       {name: 'Poster Making', time: '03:30 PM'},
       {name: 'Pokemon Showdown!', time: '03:30 PM'},
       {name: 'Sports(Footsal, 21 Points, Gully Cricket)', time: '05:00 PM'},
